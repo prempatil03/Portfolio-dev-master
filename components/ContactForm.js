@@ -19,7 +19,7 @@ export default function ContactForm() {
 
     try {
       const templateParams = {
-        to_email: 'pprem22802@gmail.com',
+        to_email: 'pprem2802@gmail.com',
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
@@ -27,10 +27,10 @@ export default function ContactForm() {
       };
 
       const response = await emailjs.send(
-        'service_h00zhrf',
-        'template_facl8eb',
+        'service_6mhrqoh',
+        'template_kqjw3ns',
         templateParams,
-        'PV85hYmJrUsVpp2bA'
+        { publicKey: 'pSQt4rEkbvjU9Y71P' }
       );
 
       if (response.status === 200) {
@@ -40,7 +40,7 @@ export default function ContactForm() {
         setStatus('error');
       }
     } catch (error) {
-      console.error('Email error:', error);
+      console.error('Email error:', error?.status, error?.text || error?.message || error);
       setStatus('error');
     }
   };

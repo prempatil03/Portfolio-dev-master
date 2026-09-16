@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 
 const EmailJSProvider = ({ children }) => {
   useEffect(() => {
-    emailjs.init("PV85hYmJrUsVpp2bA");
+    emailjs.init({ publicKey: 'pSQt4rEkbvjU9Y71P' });
   }, []);
 
   return <>{children}</>;
