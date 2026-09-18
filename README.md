@@ -19,7 +19,7 @@ This portfolio showcases professional experience, skills, projects, certificates
 - Contact form via EmailJS (messages delivered to email)
 - Resume download / view
 - Dark & light theme toggle
-- Deployed on Vercel (Hobby / free)
+- Deployed on Vercel.
 
 ---
 
