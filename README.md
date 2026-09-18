@@ -1,49 +1,120 @@
-## Live Demo
+# Premanand Patil — Portfolio
 
-**You can view the live version of the project at the following link:**
+Personal portfolio website of **Premanand Patil**, a .NET Full Stack Developer based in Pune.
 
-[**Portfolio Live Demo**](https://portfolio-dev-bice-nine.vercel.app/)
+**Live site:** [https://premanand-patil.vercel.app](https://premanand-patil.vercel.app)
+
+**GitHub:** [https://github.com/prempatil03/Portfolio-dev-master](https://github.com/prempatil03/Portfolio-dev-master)
 
 ---
 
-## Access to Code
+## About
 
-**If you would like to access the code, please don't hesitate to contact me for permission.**
+This portfolio showcases professional experience, skills, projects, certificates, and a working contact form. It is built as a clean, responsive single-page site with light/dark mode.
 
-   ##
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Highlights
+- About, Experience, Skills, Education & Learning
+- Certificates marquee with PDF preview and “View More” list
+- Featured projects (including [Docket Receptionist](https://github.com/prempatil03/DocketReceptionist))
+- Contact form via EmailJS (messages delivered to email)
+- Resume download / view
+- Dark & light theme toggle
+- Deployed on Vercel (Hobby / free)
+
+---
+
+## Tech Stack
+
+| Area | Tools |
+|------|--------|
+| Framework | Next.js 15, React 18 |
+| Styling | Tailwind CSS |
+| Motion | Framer Motion |
+| UI | Headless UI, Heroicons |
+| Contact | EmailJS |
+| Hosting | Vercel |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+ recommended
+- npm
+
+### Install & run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+app/                 # Next.js app router (page, layout, styles)
+components/          # UI sections (nav, projects, certificates, contact, theme)
+public/              # Images, resume PDF, certificates
+public/certificates/ # Certificate PDFs (auto-listed on the site)
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Contact Form
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The contact form uses **EmailJS** (free tier). Service ID, template ID, and public key are configured in:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `components/ContactForm.js`
+- `components/EmailJSProvider.js`
+
+Messages are sent to the configured Gmail inbox.
+
+---
+
+## Certificates
+
+Place certificate files (PDF, PNG, JPG, WEBP) in:
+
+```text
+public/certificates/
+```
+
+They appear automatically in the Certificates section after a refresh / redeploy.
+
+---
+
+## Deployment
+
+Connected to GitHub account **`prempatil03`** and deployed on Vercel:
+
+- Production URL: [https://premanand-patil.vercel.app](https://premanand-patil.vercel.app)
+- Push to `main` triggers a new production deploy
+
+---
+
+## Author
+
+**Premanand Patil**  
+.NET Full Stack Developer · Pune  
+
+- Email: [pprem2802@gmail.com](mailto:pprem2802@gmail.com)
+- GitHub: [prempatil03](https://github.com/prempatil03)
+- LinkedIn: [Premanand Patil](https://www.linkedin.com/in/premanand-patil-945b53217/)
+- Portfolio: [premanand-patil.vercel.app](https://premanand-patil.vercel.app)
+
+---
+
+## License
+
+See [LICENSE](./LICENSE) in this repository.
