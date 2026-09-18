@@ -1,24 +1,44 @@
 import './globals.css';
-import EmailJSProvider from '../components/EmailJSProvider';  // Fix the import path
+import EmailJSProvider from '../components/EmailJSProvider';
+import { ThemeProvider } from '../components/ThemeProvider';
 
 export const metadata = {
   title: 'Premanand Patil - Developer Engineer',
   description: 'Portfolio of Premanand Patil, Developer Engineer',
   icons: {
-    icon: '/faviconp1p.png',  // Update this to match your file name
+    icon: '/faviconp1p.png',
   },
 };
 
+const themeInitScript = `
+(function() {
+  try {
+    var stored = localStorage.getItem('theme');
+    var theme = stored === 'dark' || stored === 'light'
+      ? stored
+      : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (theme === 'dark') document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
        <head>
         <link rel="icon" type="image/png" href="/faviconp1p.png" />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="bg-white text-gray-900" suppressHydrationWarning={true}>
-        <EmailJSProvider>
-          {children}
-        </EmailJSProvider>
+      <body
+        className="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors"
+        suppressHydrationWarning={true}
+      >
+        <ThemeProvider>
+          <EmailJSProvider>
+            {children}
+          </EmailJSProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

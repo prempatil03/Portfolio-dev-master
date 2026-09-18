@@ -7,37 +7,39 @@ import Link from 'next/link';
 // Add all your projects here
 const allProjects = [
   {
+    title: "Docket Receptionist",
+    description: "An AI phone receptionist for courier and logistics. A customer asks where their parcel is — the AI takes the docket number, looks it up read-only, and answers out loud in their language. Hard-guarded so it cannot reveal salary, payment, or personal information.",
+    technologies: ["Python", "SQL Server", "Voice AI", "Guardrails", "TTS"],
+    link: "https://github.com/prempatil03/DocketReceptionist",
+    note: "Open source · Phases 1–3"
+  },
+  {
+    title: "Enterprise Resource Planning (ERP) System",
+    description: "Developed ERP modules including Inventory Management, Customer Management, Sales, Purchase, HR, and Reporting. Implemented Role-Based Access Control (RBAC) and business analytics dashboards.",
+    technologies: [".NET Framework", "SQL Server", "JavaScript", "Bootstrap", "RBAC"],
+    link: null,
+    note: "Company project · 2024"
+  },
+  {
+    title: "Human Resource Management System (HRMS)",
+    description: "Developed Attendance Management, Leave Management, Payroll, Salary Slip, and Employee Profile modules. Built performance evaluation and employee feedback workflows.",
+    technologies: [".NET", "SQL Server", "HTML5", "CSS3", "JavaScript"],
+    link: null,
+    note: "Company project · 2023"
+  },
+  {
+    title: "Decentralized Pharma Supply Chain",
+    description: "Designed a blockchain-based pharmaceutical tracking system with Solidity smart contracts for transaction validation and Web3.js for blockchain communication.",
+    technologies: ["Ethereum", "Solidity", "Web3.js", "JavaScript", "Bootstrap"],
+    link: null,
+    note: "Academic project · 2022"
+  },
+  {
     title: "Personal Portfolio",
-    description: "A minimalist portfolio website built with Next.js and Tailwind CSS, featuring clean design and smooth navigation.",
+    description: "A minimalist portfolio website built with Next.js and Tailwind CSS, featuring clean design, contact form, and smooth navigation.",
     technologies: ["Next.js", "Tailwind CSS"],
-    link: "https://github.com/patilprem21/portfolio-dev"
+    link: "https://github.com/prempatil03/Portfolio-dev-master"
   },
-  {
-  title: "Multi-Agent AI Research Assistant",
-  description: "Advanced AI system with three specialised agents (Planner, Search, Synthesizer) that work together to conduct comprehensive research and generate professional reports. Features real-time web search, fallback mechanisms, and modular architecture.",
-  technologies: ["Python", "Google Gemini API", "Multi-Agent Architecture", "AI/ML", "Web Scraping"],
-  link: "https://github.com/patilprem21/multi-agent-gemini"
-  },
-  // Add new projects here
-  {
-    title: "E-commerce Dashboard",
-    description: "Admin dashboard for managing products, orders, and customer data with real-time updates.",
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
-    link: "#"
-  },
-  {
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates and team features.",
-    technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
-    link: "#"
-  },
-  {
-    title: "Weather Application",
-    description: "Real-time weather forecasting app with location-based services and interactive maps.",
-    technologies: ["React Native", "Weather API", "Google Maps API"],
-    link: "#"
-  },
-  // You can keep adding more projects following the same structure
 ];
 
 
@@ -68,11 +70,11 @@ export default function ProjectsModal({ isOpen, closeModal }) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl sm:p-6">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl sm:p-6 dark:bg-gray-900 dark:text-gray-100">
                 <div className="absolute right-0 top-0 pr-4 pt-4">
                   <button
                     type="button"
-                    className="rounded-md bg-white text-gray-400 hover:text-gray-500"
+                    className="rounded-md bg-white text-gray-400 hover:text-gray-500 dark:bg-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
                     onClick={closeModal}
                   >
                     <XMarkIcon className="h-6 w-6" />
@@ -87,32 +89,39 @@ export default function ProjectsModal({ isOpen, closeModal }) {
                     {allProjects.map((project, index) => (
                       <div 
                         key={index}
-                        className="group border border-gray-200 rounded-lg p-6 hover:border-blue-500 transition-colors"
+                        className="group border border-gray-200 rounded-lg p-6 hover:border-blue-500 transition-colors dark:border-gray-700 dark:hover:border-blue-400"
                       >
                         <div className="space-y-4">
-                          <h3 className="font-medium group-hover:text-blue-600 transition-colors">
+                          <h3 className="font-medium group-hover:text-blue-600 transition-colors dark:group-hover:text-blue-400">
                             {project.title}
                           </h3>
-                          <p className="text-gray-700 text-sm">
+                          <p className="text-gray-700 text-sm dark:text-gray-300">
                             {project.description}
                           </p>
                           <div className="flex flex-wrap gap-2">
                             {project.technologies.map((tech, techIndex) => (
                               <span 
                                 key={techIndex}
-                                className="text-xs bg-gray-100 px-2 py-1 rounded"
+                                className="text-xs bg-gray-100 px-2 py-1 rounded dark:bg-gray-800 dark:text-gray-300"
                               >
                                 {tech}
                               </span>
                             ))}
                           </div>
-                          <Link 
-                            href={project.link}
-                            className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700"
-                          >
-                            View Project 
-                            <ArrowTopRightOnSquareIcon className="h-4 w-4 ml-1" />
-                          </Link>
+                          {project.note && (
+                            <p className="text-xs text-gray-500 dark:text-gray-400">{project.note}</p>
+                          )}
+                          {project.link && (
+                            <Link 
+                              href={project.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                            >
+                              View Project 
+                              <ArrowTopRightOnSquareIcon className="h-4 w-4 ml-1" />
+                            </Link>
+                          )}
                         </div>
                       </div>
                     ))}

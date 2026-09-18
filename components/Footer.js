@@ -13,42 +13,46 @@ export default function Footer() {
     });
   };
 
+  const mutedLink =
+    'text-gray-600 hover:text-gray-900 text-sm dark:text-gray-400 dark:hover:text-white';
+  const heading =
+    'text-sm font-semibold text-gray-900 dark:text-gray-100';
+
   return (
-    <footer className="bg-gray-50 border-t border-gray-100">
+    <footer className="bg-gray-50 border-t border-gray-100 dark:bg-gray-900 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Column 1 - Logo & Description */}
           <div className="space-y-4">
-            {/* Replace the h3 with Link component */}
             <Link 
               href="#home"
               onClick={scrollToTop}
-              className="text-xl font-light hover:text-gray-600 transition-colors"
+              className="text-xl font-light hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             >
               PP
             </Link>
-            <p className="text-gray-600 text-sm">
-              Full Stack Developer & UI/UX Design Enthusiast based in India, 
-              passionate about creating meaningful web experiences.
+            <p className="text-gray-600 text-sm dark:text-gray-400">
+              .NET Full Stack Developer based in Pune, building enterprise
+              ERP, HRMS, and web portal solutions.
             </p>
           </div>
 
           {/* Column 2 - Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-gray-900">Quick Links</h3>
+            <h3 className={heading}>Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#about" className="text-gray-600 hover:text-gray-900 text-sm">
+                <Link href="#about" className={mutedLink}>
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#projects" className="text-gray-600 hover:text-gray-900 text-sm">
+                <Link href="#projects" className={mutedLink}>
                   Projects
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-gray-600 hover:text-gray-900 text-sm">
+                <Link href="#contact" className={mutedLink}>
                   Contact
                 </Link>
               </li>
@@ -57,23 +61,23 @@ export default function Footer() {
 
           {/* Column 3 - Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-gray-900">Contact</h3>
+            <h3 className={heading}>Contact</h3>
             <ul className="space-y-3">
               <li>
                 <a 
-                  href="mailto:pprem22802@gmail.com" 
-                  className="text-gray-600 hover:text-gray-900 text-sm flex items-center"
+                  href="mailto:pprem2802@gmail.com" 
+                  className={`${mutedLink} flex items-center`}
                 >
                   <EnvelopeIcon className="h-4 w-4 mr-2" />
-                  pprem22802@gmail.com
+                  pprem2802@gmail.com
                 </a>
               </li>
               <li>
                 <a 
-                  href="https://github.com/patilprem21" 
+                  href="https://github.com/prempatil03" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900 text-sm flex items-center"
+                  className={`${mutedLink} flex items-center`}
                 >
                   <CodeBracketIcon className="h-4 w-4 mr-2" />
                   GitHub
@@ -84,13 +88,13 @@ export default function Footer() {
 
           {/* Column 4 - Social Links */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-gray-900">Connect</h3>
+            <h3 className={heading}>Connect</h3>
             <div className="flex space-x-4">
               <a 
-                href="https://linkedin.com/in/premanand-patil" 
+                href="https://www.linkedin.com/in/premanand-patil-945b53217/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900"
+                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
               >
                 <span className="sr-only">LinkedIn</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -99,10 +103,10 @@ export default function Footer() {
               </a>
              
               <a  
-                href="https://github.com/patilprem21" 
+                href="https://github.com/prempatil03" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900"
+                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
               >
                 <span className="sr-only">Github</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -115,8 +119,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-100">
-          <p className="text-center text-gray-500 text-sm">
+        <div className="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800">
+          <p className="text-center text-gray-500 text-sm dark:text-gray-400">
             © {currentYear} Premanand Patil. All rights reserved.
           </p>
         </div>

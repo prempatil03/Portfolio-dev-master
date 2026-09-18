@@ -13,7 +13,7 @@ export default function Logo() {
   return (
     <Link 
       href="#home" 
-      className="text-xl font-light tracking-wider hover:text-gray-600 transition-colors"
+      className="text-xl font-light tracking-wider hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
       onClick={scrollToTop}
     >
       PP

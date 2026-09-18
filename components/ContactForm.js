@@ -69,7 +69,7 @@ export default function ContactForm() {
         transition={{ delay: 0.2 }}
       >
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Name
           </label>
           <motion.input
@@ -77,7 +77,9 @@ export default function ContactForm() {
             id="name"
             required
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
-                     focus:border-blue-500 focus:ring-blue-500 transition-all"
+                     focus:border-blue-500 focus:ring-blue-500 transition-all
+                     dark:bg-gray-900 dark:border-gray-600 dark:text-gray-100
+                     dark:placeholder-gray-500"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             variants={inputVariants}
@@ -85,7 +87,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Email
           </label>
           <motion.input
@@ -93,7 +95,9 @@ export default function ContactForm() {
             id="email"
             required
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
-                     focus:border-blue-500 focus:ring-blue-500 transition-all"
+                     focus:border-blue-500 focus:ring-blue-500 transition-all
+                     dark:bg-gray-900 dark:border-gray-600 dark:text-gray-100
+                     dark:placeholder-gray-500"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             variants={inputVariants}
@@ -108,7 +112,7 @@ export default function ContactForm() {
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
       >
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
           Subject
         </label>
         <motion.input
@@ -116,7 +120,9 @@ export default function ContactForm() {
           id="subject"
           required
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
-                   focus:border-blue-500 focus:ring-blue-500 transition-all"
+                   focus:border-blue-500 focus:ring-blue-500 transition-all
+                   dark:bg-gray-900 dark:border-gray-600 dark:text-gray-100
+                   dark:placeholder-gray-500"
           value={formData.subject}
           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
           variants={inputVariants}
@@ -130,7 +136,7 @@ export default function ContactForm() {
         viewport={{ once: true }}
         transition={{ delay: 0.4 }}
       >
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
           Message
         </label>
         <motion.textarea
@@ -138,7 +144,9 @@ export default function ContactForm() {
           rows={4}
           required
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
-                   focus:border-blue-500 focus:ring-blue-500 transition-all"
+                   focus:border-blue-500 focus:ring-blue-500 transition-all
+                   dark:bg-gray-900 dark:border-gray-600 dark:text-gray-100
+                   dark:placeholder-gray-500"
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           variants={inputVariants}
@@ -152,7 +160,8 @@ export default function ContactForm() {
         className="inline-flex items-center justify-center px-6 py-3 border border-transparent 
                  text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 
                  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
-                 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                 disabled:opacity-50 disabled:cursor-not-allowed transition-all
+                 dark:focus:ring-offset-gray-950"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         initial={{ opacity: 0 }}

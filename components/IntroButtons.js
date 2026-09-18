@@ -8,7 +8,7 @@ export default function IntroButtons() {
     <div className="flex flex-wrap gap-4 justify-center mt-6">
       <Link 
         href="#projects" 
-        className="px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors"
+        className="px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-white"
         onClick={(e) => {
           e.preventDefault();
           document.querySelector('#projects').scrollIntoView({ 
@@ -21,7 +21,7 @@ export default function IntroButtons() {
       </Link>
       <Link 
         href="#contact" 
-        className="px-6 py-2 border border-gray-900 rounded hover:bg-gray-50 transition-colors"
+        className="px-6 py-2 border border-gray-900 rounded hover:bg-gray-50 transition-colors dark:border-gray-200 dark:hover:bg-gray-800"
         onClick={(e) => {
           e.preventDefault();
           document.querySelector('#contact').scrollIntoView({ 
