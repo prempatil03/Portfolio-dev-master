@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { EnvelopeIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 
@@ -18,29 +17,25 @@ export default function ContactForm() {
     setStatus('sending');
 
     try {
-      const templateParams = {
-        to_email: 'pprem2802@gmail.com',
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message
-      };
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
 
-      const response = await emailjs.send(
-        'service_6mhrqoh',
-        'template_kqjw3ns',
-        templateParams,
-        { publicKey: 'pSQt4rEkbvjU9Y71P' }
-      );
-
-      if (response.status === 200) {
+      if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
         setStatus('error');
       }
     } catch (error) {
-      console.error('Email error:', error?.status, error?.text || error?.message || error);
+      console.error('Email error:', error?.message || error);
       setStatus('error');
     }
   };

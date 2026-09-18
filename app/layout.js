@@ -1,5 +1,4 @@
 import './globals.css';
-import EmailJSProvider from '../components/EmailJSProvider';
 import { ThemeProvider } from '../components/ThemeProvider';
 
 export const metadata = {
@@ -35,9 +34,7 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning={true}
       >
         <ThemeProvider>
-          <EmailJSProvider>
-            {children}
-          </EmailJSProvider>
+          {children}
         </ThemeProvider>
       </body>
     </html>

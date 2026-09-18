@@ -73,12 +73,16 @@ public/certificates/ # Certificate PDFs (auto-listed on the site)
 
 ## Contact Form
 
-The contact form uses **EmailJS** (free tier). Service ID, template ID, and public key are configured in:
+The contact form posts to a **server-only** API route (`/api/contact`).  
+EmailJS keys are **not** stored in frontend code.
 
-- `components/ContactForm.js`
-- `components/EmailJSProvider.js`
+1. Copy `.env.example` → `.env.local` and fill values locally  
+2. On Vercel: **Settings → Environment Variables** — add the same keys for Production  
+3. In EmailJS dashboard → **Account → Security**:
+   - Enable **Allow EmailJS API for non-browser applications**
+   - Prefer using the **Private Key** (server only)
 
-Messages are sent to the configured Gmail inbox.
+**Never commit** `.env.local` or real keys to GitHub.
 
 ---
 
