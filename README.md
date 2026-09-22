@@ -4,6 +4,8 @@ Personal portfolio website of **Premanand Patil**, a .NET Full Stack Developer b
 
 **Live site:** [https://premanand-patil.vercel.app](https://premanand-patil.vercel.app)
 
+**Livelink-2:** [https://premanandpatil-portfolio.vercel.app](https://premanandpatil-portfolio.vercel.app)
+
 **GitHub:** [https://github.com/prempatil03/Portfolio-dev-master](https://github.com/prempatil03/Portfolio-dev-master)
 
 ---
